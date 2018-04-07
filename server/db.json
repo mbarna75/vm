@@ -1,0 +1,15 @@
+{
+  "reservation": [
+    {
+      "id": 1,
+      "name": "Próba Gizi",
+      "phnum": "+36-30-999-8877",
+      "em": "pgizi@gmail.com",
+      "arrival": "2018-06-09",
+      "departure": "2018-06-16",
+      "adult": 2,
+      "child": 2,
+      "room": 1
+    }
+  ]
+}

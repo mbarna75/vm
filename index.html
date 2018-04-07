@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dalmáciai nyaralás</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin-ext');
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            color: white;
+            font-family: arial;
+            overflow: hidden;
+        }
+
+        body {
+            background-image: url("hatter.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            font-size: 40px;
+            font-family: 'Work Sans';
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kozepe {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .fejlec {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            font-family: arial;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+        }
+
+        .gomb {
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            width: 300px;
+            display: inline-block;
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        .gomb:hover {
+            filter: invert(100%);
+            transition-duration: 0.5s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <video autoplay loop muted poster="assets/img/hatter.jpg" src="assets/img/hatter.mp4"></video>
+    <div class="kozepe">Üdvözöljük a Villa Marioneta panziónál
+        <div>
+            <a class="gomb" href="about.html">Magunkról</a>
+            <div class="w-100"></div>
+            <a class="gomb" href="programs.html">Programlehetőségek</a>
+            <div class="w-100"></div>
+            <a class="gomb" href="contact.html">Kapcsolat</a>
+            <div class="w-100"></div>
+            <a class="gomb" href="pansion.html">A panzió</a>
+            <div class="w-100"></div>
+            <a class="gomb" href="galery.html">Képgaléria</a>
+            <div class="w-100"></div>
+            <a class="gomb" href="reservation.html">Foglalás</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Foglalás</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.jpg" />
+	<link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
+
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+	/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+
+	<link href="assets/css/gsdk.css" rel="stylesheet" />
+	<link href="assets/css/demo1.css" rel="stylesheet" />
+
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-image: url('assets/img/reservation.jpg')">
+		<div id="navbar-full">
+			<div id="navbar">
+				<!--    
+				navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
+				-->
+				<nav class="navbar navbar-ct-blue navbar-transparent navbar-fixed-top" role="navigation">
+
+
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li>
+									<a href="index.html">
+										<i class="material-icons">home</i>
+									</a>
+								</li>
+								<li class="dropdown">
+									<a href="#gsdk" class="dropdown-toggle" data-toggle="dropdown">Menü
+										<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="about.html">Magunkról</a>
+										</li>
+										<li>
+											<a href="programs.html">Programlehetőségek</a>
+										</li>
+										<li>
+											<a href="contact.html">Kapcsolat</a>
+										</li>
+										<li>
+											<a href="pansion.html">A panzió</a>
+										</li>
+										<li>
+											<a href="galery.html">Képgaléria</a>
+										</li>
+										<li>
+											<a class="active" href="reservation.html">Foglalás</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a class="navbar-brand">Foglalás</a>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+
+			</div>
+			<!--  end navbar -->
+
+		</div>
+		<!-- end menu-dropdown -->
+		<!--   Big container   -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<!--      Wizard container        -->
+					<div class="wizard-container">
+						<div class="card wizard-card" data-color="green" id="wizard">
+							<form id="newReservationForm" action="" method="">
+								<!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+								<div class="wizard-header">
+									<h3 class="wizard-title">
+										Foglalás
+									</h3>
+									<h5>Töltse ki az ürlapot és mi felvesszük Önnel a kapcsolatot</h5>
+								</div>
+								<div class="wizard-navigation">
+									<ul>
+										<li>
+											<a href="#details" data-toggle="tab">Azonosítás</a>
+										</li>
+										<li>
+											<a href="#captain" data-toggle="tab">Időpont és utasok</a>
+										</li>
+										<li>
+											<a href="#description" data-toggle="tab">Egyebek</a>
+										</li>
+										<li>
+											<a href="#summary" data-toggle="tab">Összegzés</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="tab-content">
+									<div class="tab-pane" id="details">
+										<div class="row">
+											<div class="col-sm-12">
+												<h4 class="info-text">Kérjük adjon meg néhány kapcsolattartási adatot!
+													<br>
+													<span class="info-text text-muted">A megadott e-mail címen vesszük fel Önnel a kapcsolatot</span>
+												</h4>
+											</div>
+											<div class="col-sm-12">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">face</i>
+													</span>
+													<div class="form-group label-floating">
+														<label class="control-label">Név</label>
+														<input name="name" type="text" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">phone</i>
+													</span>
+													<div class="form-group label-floating">
+														<label class="control-label">Mobil telefonszám</label>
+														<input name="phnum" type="text" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">email</i>
+													</span>
+													<div class="form-group label-floating">
+														<label class="control-label">E-mail</label>
+														<input name="em" type="text" class="form-control">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="captain">
+										<div class="row">
+											<h4 class="info-text">Válasszon időpontot</h4>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">date_range</i>
+													</span>
+													<div class="form-group label-floating">
+														<label class="control-label"></label>
+														<input name="arrival" type="date" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">date_range</i>
+													</span>
+													<div class="form-group label-floating">
+														<label class="control-label"></label>
+														<input name="departure" type="date" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div>&nbsp;</div>
+											<h4 class="info-text">Utasok és szobák számának kiválasztása</h4>
+											<div class="col-sm-3 col-sm-offset-1">
+												<div class="form-group label-floating">
+													<label class="control-label">Felnőttek</label>
+													<select class="form-control">
+														<option disabled="" selected=""></option>
+														<option>1 felnőtt</option>
+														<option>2 felnőtt</option>
+														<option>3 felnőtt</option>
+														<option>4 felnőtt</option>
+														<option>5 felnőtt</option>
+														<option>6 felnőtt</option>
+														<option>7 felnőtt</option>
+														<option>8 felnőtt</option>
+														<option>9 felnőtt</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-3 col-sm-offset-1">
+												<div class="form-group label-floating">
+													<label class="control-label">Gyerekek</label>
+													<select class="form-control">
+														<option disabled="" selected=""></option>
+														<option>0 gyerek</option>
+														<option>1 gyerek</option>
+														<option>2 gyerek</option>
+														<option>3 gyerek</option>
+														<option>4 gyerek</option>
+														<option>5 gyerek</option>
+														<option>6 gyerek</option>
+														<option>7 gyerek</option>
+														<option>8 gyerek</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-3 col-sm-offset-1">
+												<div class="form-group label-floating">
+													<label class="control-label">Szobák</label>
+													<select class="form-control">
+														<option disabled="" selected="1"></option>
+														<option>1 szoba</option>
+														<option>2 szoba</option>
+														<option>3 szoba</option>
+														<option>4 szoba</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="description">
+										<div class="row">
+											<h4 class="info-text">Ha még valamit szeretne velünk közölni, itt megteheti</h4>
+											<div class="col-sm-6 col-sm-offset-1">
+												<div class="form-group">
+													<label>Megjegyzés</label>
+													<textarea class="form-control" placeholder="" rows="6"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="summary">
+										<div class="row">
+											<h4 class="info-text">Kérjük ellenőrizze a megadott adatokat,
+												<br>majd kattintson az ELKÜLDÉS gombra</h4>
+											<div class="col-sm-6 col-sm-offset-1">
+												<div class="form-group">
+													<label>Összegzés</label>
+													<p class="summary"></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wizard-footer">
+									<div class="pull-right">
+										<input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Következő' />
+										<input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='ELKÜLDÉS' />
+									</div>
+
+									<div class="pull-left">
+										<input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Vissza' />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+							<!-- Próba kiiratás -->
+							<div id="reservation-list">
+								<pre></pre>
+							</div>
+						</div>
+					</div>
+					<!-- wizard container -->
+				</div>
+			</div>
+			<!-- row -->
+		</div>
+		<!--  big container -->
+	</div>
+
+</body>
+<!--   Core JS Files   -->
+<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+
+<!--  Plugin for the Wizard -->
+<script src="assets/js/material-bootstrap-wizard.js"></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="assets/js/jquery.validate.min.js"></script>
+
+<!-- Foglalás ajax -->
+<script src="assets/js/reservation.js" type="text/javascript"></script>
+
+</html>
