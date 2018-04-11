@@ -24,7 +24,7 @@ var RESTURL = "http://localhost:3000";
         }
 
         function refreshReservationList() {
-            $.getJSON(RESTURL + "/reservations?_sort=id&_order=desc").done(
+            $.getJSON(RESTURL + "/reservations").done(
                 function (reservationList) {
                     $('#reservation-list > pre')[0].innerText = JSON.stringify(reservationList, null, 2);
                 }
@@ -34,7 +34,7 @@ var RESTURL = "http://localhost:3000";
         $(document).ready(function () {
             refreshReservationList();
 
-            $("#new-reservation-form").submit(
+            $("#newReservationForm").submit(
                 function (event) {
                     // bongeszo beepitett submit esemeny megallitasa
                     event.preventDefault();
@@ -45,7 +45,7 @@ var RESTURL = "http://localhost:3000";
                     var newReservationFormNativeElem = newReservationFormElem[0];
 
                     // check html5 validator
-                    if (newReservationFormNativeElem.checkValidity() == true) {
+                    // if (newReservationFormNativeElem.checkValidity() == true) {
                         // Itt valid az urlapom
                         var serializedFormArray = newReservationFormElem.serializeArray();
                         var data = {};
@@ -77,7 +77,7 @@ var RESTURL = "http://localhost:3000";
                             enableInputs(inputs);
                             showAlert(newReservationFormElem, 'warning', 'Hiba a serveren');
                         });
-                    }
+                    // }
 
                     if (newReservationFormElem.hasClass('was-validated') == false) {
                         newReservationFormElem.addClass('was-validated');
