@@ -125,9 +125,6 @@
 										<li>
 											<a href="#description" data-toggle="tab">Egyebek</a>
 										</li>
-										<li>
-											<a href="#summary" data-toggle="tab">Összegzés</a>
-										</li>
 									</ul>
 								</div>
 
@@ -147,7 +144,7 @@
 													</span>
 													<div class="form-group label-floating">
 														<label class="control-label">Név</label>
-														<input name="name" type="text" class="form-control">
+														<input id="name" name="name" type="text" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -158,7 +155,7 @@
 													</span>
 													<div class="form-group label-floating">
 														<label class="control-label">Mobil telefonszám</label>
-														<input name="phnum" type="text" class="form-control">
+														<input id="phnum" name="phnum" type="text" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -169,7 +166,7 @@
 													</span>
 													<div class="form-group label-floating">
 														<label class="control-label">E-mail</label>
-														<input name="em" type="text" class="form-control">
+														<input id="em" name="em" type="text" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -185,7 +182,7 @@
 													</span>
 													<div class="form-group label-floating">
 														<label class="control-label"></label>
-														<input name="arrival" type="date" class="form-control">
+														<input id="arrival" name="arrival" type="date" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -196,7 +193,7 @@
 													</span>
 													<div class="form-group label-floating">
 														<label class="control-label"></label>
-														<input name="departure" type="date" class="form-control">
+														<input id="departure" name="departure" type="date" class="form-control">
 													</div>
 												</div>
 											</div>
@@ -205,7 +202,7 @@
 											<div class="col-sm-3 col-sm-offset-1">
 												<div class="form-group label-floating">
 													<label class="control-label">Felnőttek</label>
-													<select name="adult" class="form-control">
+													<select id="adult" name="adult" class="form-control">
 														<option></option>
 														<option>1 felnőtt</option>
 														<option selected>2 felnőtt</option>
@@ -222,7 +219,7 @@
 											<div class="col-sm-3 col-sm-offset-1">
 												<div class="form-group label-floating">
 													<label class="control-label">Gyerekek</label>
-													<select name="child" class="form-control">
+													<select id="child" name="child" class="form-control">
 														<option></option>
 														<option selected>0 gyerek</option>
 														<option>1 gyerek</option>
@@ -239,7 +236,7 @@
 											<div class="col-sm-3 col-sm-offset-1">
 												<div class="form-group label-floating">
 													<label class="control-label">Szobák</label>
-													<select name="room" class="form-control">
+													<select id="room" name="room" class="form-control">
 														<option></option>
 														<option selected>1 szoba</option>
 														<option>2 szoba</option>
@@ -255,20 +252,8 @@
 											<h4 class="info-text">Ha még valamit szeretne velünk közölni, itt megteheti</h4>
 											<div class="col-sm-6 col-sm-offset-1">
 												<div class="form-group">
-													<label>Megjegyzés</label>
-													<textarea name="textarea" class="form-control" placeholder="" rows="6"></textarea>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="tab-pane" id="summary">
-										<div class="row">
-											<h4 class="info-text">Kérjük ellenőrizze a megadott adatokat,
-												<br>majd kattintson az ELKÜLDÉS gombra</h4>
-											<div class="col-sm-6 col-sm-offset-1">
-												<div class="form-group">
-													<label>Összegzés</label>
-													<p class="summary"></p>
+													<label for="txarea">Megjegyzés</label>
+													<textarea id="txarea" name="textarea" class="form-control" placeholder="" rows="6"></textarea>
 												</div>
 											</div>
 										</div>
@@ -277,7 +262,7 @@
 								<div class="wizard-footer">
 									<div class="pull-right">
 										<input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Következő' />
-										<button type='submit' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='ELKÜLDÉS'>Elküldés</button>
+										<input onclick="controlResertvationModal()" type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='ELKÜLDÉS' />
 									</div>
 
 									<div class="pull-left">
@@ -299,6 +284,34 @@
 			<pre></pre>
 		</div>
 	</div>
+	<div class="modal fade" id="controlResertvationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">Az Ön foglalásának adatai</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			<p id="modal-body1"></p>
+			<p id="modal-body2"></p>
+			<p id="modal-body3"></p>
+			<p id="modal-body4"></p>
+			<p id="modal-body5"></p>
+			<p id="modal-body6"></p>
+			<p id="modal-body7"></p>
+			<p id="modal-body8"></p>
+			<p id="modal-body9"></p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" 
+				data-dismiss="modal">Mégsem</button>
+			  <button type="submit" class="btn btn-primary" form="newTicketForm">Mentés</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
 
 </body>
 <!--   Core JS Files   -->
