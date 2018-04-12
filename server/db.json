@@ -1,15 +1,16 @@
 {
   "reservations": [
     {
-      "id": 1,
       "name": "Próba Gizi",
       "phnum": "+36-30-999-8877",
       "em": "pgizi@gmail.com",
       "arrival": "2018-06-09",
       "departure": "2018-06-16",
-      "adult": 2,
-      "child": 2,
-      "room": 1
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "fhsdfhsdfh",
+      "id": 1
     },
     {
       "name": "Barnuska",
@@ -29,23 +30,35 @@
       "em": "barnuska@gmail.com",
       "arrival": "2018-04-29",
       "departure": "2018-05-06",
-      "adult": "2 felnőtt",
+      "adult": "4 felnőtt",
       "child": "0 gyerek",
-      "room": "1 szoba",
+      "room": "2 szoba",
       "textarea": "dlfgkbjdfpgkdfglbkdfgblk",
       "id": 3
     },
     {
-      "name": "",
-      "phnum": "",
-      "em": "",
-      "arrival": "",
-      "departure": "",
+      "name": "Béla",
+      "phnum": "06-30-999-5555",
+      "em": "hghgh@hghgh.hu",
+      "arrival": "2018-04-15",
+      "departure": "2018-04-22",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "5 szoba",
+      "textarea": "dfgdfgjdfgj",
+      "id": 5
+    },
+    {
+      "name": "Jóska Pista",
+      "phnum": "06-20-222-4444",
+      "em": "joskapista@gmail.com",
+      "arrival": "2018-07-14",
+      "departure": "2018-07-21",
       "adult": "2 felnőtt",
       "child": "0 gyerek",
       "room": "1 szoba",
-      "textarea": "",
-      "id": 4
+      "textarea": "Megyünk hát",
+      "id": 15
     }
   ]
 }

@@ -9,6 +9,7 @@ function enableInputs(inputs) {
 }
 
 function showAlert(beforeElem, type, text) {
+    console.log("itt vagyok a showAlertben");
     var formAlertId = 'form-alert';
 
     $("#" + formAlertId).remove();
@@ -21,7 +22,7 @@ function showAlert(beforeElem, type, text) {
             $(this).remove();
         });
     }, 3000);
-}
+};
 
 function refreshReservationList() {
     $.getJSON(RESTURL + "/reservations").done(
@@ -67,14 +68,16 @@ $("#modalsubmit").on("click", function newReservationTag(event) {
             enableInputs(inputs);
 
             showAlert(newReservationFormElem, 'success', 'Sikeres mentés');
-            refreshReservationList();
+//            refreshReservationList();
             $("#controlResertvationModal").modal("hide");
         }).fail(function () {
-            alert("Hiba a server elérésénél");
+            // alert("Hiba a server elérésénél");
 
             enableInputs(inputs);
             showAlert(newReservationFormElem, 'warning', 'Hiba a serveren');
+            $("#controlResertvationModal").modal("hide");
         });
+        
     // }
 
     if (newReservationFormElem.hasClass('was-validated') == false) {
@@ -82,9 +85,9 @@ $("#modalsubmit").on("click", function newReservationTag(event) {
     }
 });
 
-$(document).ready(function () {
-    refreshReservationList();
-});
+//$(document).ready(function () {
+//    refreshReservationList();
+//});
 function controlResertvationModal() {
     $("#controlResertvationModal").modal("show");
     
