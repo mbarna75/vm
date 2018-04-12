@@ -31,62 +31,63 @@ function refreshReservationList() {
     );
 }
 
+$("#modalsubmit").on("click", function newReservationTag(event) {
+    // bongeszo beepitett submit esemeny megallitasa
+    event.preventDefault()
+
+    // jquery form elem
+    var newReservationFormElem = $("#newReservationForm");
+    
+    // bongeszo native form elem
+    var newReservationFormNativeElem = newReservationFormElem[0];
+
+    // check html5 validator
+    // if (newReservationFormNativeElem.checkValidity() == true) {
+        // Itt valid az urlapom
+        var serializedFormArray = newReservationFormElem.serializeArray();
+        var data = {};
+        $(serializedFormArray).each(
+            function (index, elem) {
+                data[elem['name']] = elem['value'];
+            }
+        );
+
+        var inputs = $('input', newReservationFormElem);
+        disableInputs(inputs);
+
+        $.ajax({
+            type: "POST",
+            url: RESTURL + "/reservations",
+            "data": data,
+            dataType: 'json'
+        }).done(function (returnData) {
+            console.log("returnData => ", returnData);
+            newReservationFormElem.removeClass('was-validated');
+            newReservationFormNativeElem.reset();
+            enableInputs(inputs);
+
+            showAlert(newReservationFormElem, 'success', 'Sikeres mentés');
+            refreshReservationList();
+            $("#controlResertvationModal").modal("hide");
+        }).fail(function () {
+            alert("Hiba a server elérésénél");
+
+            enableInputs(inputs);
+            showAlert(newReservationFormElem, 'warning', 'Hiba a serveren');
+        });
+    // }
+
+    if (newReservationFormElem.hasClass('was-validated') == false) {
+        newReservationFormElem.addClass('was-validated');
+    }
+});
+
 $(document).ready(function () {
     refreshReservationList();
-
-    $("#newReservationForm").submit(
-        function (event) {
-            // bongeszo beepitett submit esemeny megallitasa
-            event.preventDefault();
-
-            // jquery form elem
-            var newReservationFormElem = $(this);
-            // bongeszo native form elem
-            var newReservationFormNativeElem = newReservationFormElem[0];
-
-            // check html5 validator
-            // if (newReservationFormNativeElem.checkValidity() == true) {
-                // Itt valid az urlapom
-                var serializedFormArray = newReservationFormElem.serializeArray();
-                var data = {};
-                $(serializedFormArray).each(
-                    function (index, elem) {
-                        data[elem['name']] = elem['value'];
-                    }
-                );
-
-                var inputs = $('input', newReservationFormElem);
-                disableInputs(inputs);
-
-                $.ajax({
-                    type: "POST",
-                    url: RESTURL + "/reservations",
-                    "data": data,
-                    dataType: 'json'
-                }).done(function (returnData) {
-                    console.log("returnData => ", returnData);
-                    newReservationFormElem.removeClass('was-validated');
-                    newReservationFormNativeElem.reset();
-                    enableInputs(inputs);
-
-                    showAlert(newReservationFormElem, 'success', 'Sikeres mentés');
-                    refreshReservationList();
-                }).fail(function () {
-                    alert("Hiba a server elérésénél");
-
-                    enableInputs(inputs);
-                    showAlert(newReservationFormElem, 'warning', 'Hiba a serveren');
-                });
-            // }
-
-            if (newReservationFormElem.hasClass('was-validated') == false) {
-                newReservationFormElem.addClass('was-validated');
-            }
-        }
-    );
 });
 function controlResertvationModal() {
     $("#controlResertvationModal").modal("show");
+    
     $("#modal-body1").text("Név: "+$('#name').val());
     $("#modal-body2").text("Mobilszám: "+$('#phnum').val());
     $("#modal-body3").text("E-mail: "+$('#em').val());

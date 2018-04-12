@@ -1,5 +1,51 @@
 {
   "reservations": [
-    
+    {
+      "id": 1,
+      "name": "Próba Gizi",
+      "phnum": "+36-30-999-8877",
+      "em": "pgizi@gmail.com",
+      "arrival": "2018-06-09",
+      "departure": "2018-06-16",
+      "adult": 2,
+      "child": 2,
+      "room": 1
+    },
+    {
+      "name": "Barnuska",
+      "phnum": "3547345734",
+      "em": "dfghsdh@shrth.hu",
+      "arrival": "2018-04-27",
+      "departure": "2018-05-04",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "fhsdfhsdfh",
+      "id": 2
+    },
+    {
+      "name": "Barnuska",
+      "phnum": "3456",
+      "em": "barnuska@gmail.com",
+      "arrival": "2018-04-29",
+      "departure": "2018-05-06",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "dlfgkbjdfpgkdfglbkdfgblk",
+      "id": 3
+    },
+    {
+      "name": "",
+      "phnum": "",
+      "em": "",
+      "arrival": "",
+      "departure": "",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "",
+      "id": 4
+    }
   ]
 }
