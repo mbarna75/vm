@@ -90,7 +90,7 @@ $("#modalsubmit").on("click", function newReservationTag(event) {
 //});
 function controlResertvationModal() {
     $("#controlResertvationModal").modal("show");
-    
+    console.log("itten vagyok");
     $("#modal-body1").text("Név: "+$('#name').val());
     $("#modal-body2").text("Mobilszám: "+$('#phnum').val());
     $("#modal-body3").text("E-mail: "+$('#em').val());

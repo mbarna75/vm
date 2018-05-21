@@ -4,43 +4,31 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Foglalás</title>
-
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	<meta name="viewport" content="width=device-width" />
 
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.jpg" />
-	<link rel="icon" type="image/jpg" href="assets/img/favicon.jpg" />
+	<title>Foglalás</title>
 
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.jpg">
+	<link rel="icon" type="image/jpg" href="assets/img/favicon.jpg">
 
-	<!--     Fonts and icons     -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
-	/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-
-	<!-- CSS Files -->
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-
-	<link href="assets/css/gsdk.css" rel="stylesheet" />
-	<link href="assets/css/demo1.css" rel="stylesheet" />
-
+	<link href="assets/css/reservation.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet"
+	 type="text/css">
 </head>
 
 <body>
+	<!-- Background image -->
 	<div class="image-container set-full-height" style="background-image: url('assets/img/reservation.jpg')">
+		<!-- Navbar -->
 		<div id="navbar-full">
 			<div id="navbar">
-				<!--    
-				navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
-				-->
 				<nav class="navbar navbar-ct-blue navbar-transparent navbar-fixed-top" role="navigation">
-
-
 					<div class="container">
-						<!-- Brand and toggle get grouped for better mobile display -->
+
+						<!-- Collapse menu -->
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span class="sr-only">Toggle navigation</span>
@@ -49,8 +37,9 @@
 								<span class="icon-bar"></span>
 							</button>
 						</div>
+						<!-- /Collapse menu -->
 
-						<!-- Collect the nav links, forms, and other content for toggling -->
+						<!-- Menu -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li>
@@ -59,7 +48,7 @@
 									</a>
 								</li>
 								<li class="dropdown">
-									<a href="#gsdk" class="dropdown-toggle" data-toggle="dropdown">Menü
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü
 										<b class="caret"></b>
 									</a>
 									<ul class="dropdown-menu">
@@ -88,26 +77,22 @@
 								</li>
 							</ul>
 						</div>
-						<!-- /.navbar-collapse -->
+						<!-- /Menu -->
+
 					</div>
-					<!-- /.container-fluid -->
 				</nav>
-
 			</div>
-			<!--  end navbar -->
-
 		</div>
-		<!-- end menu-dropdown -->
-		<!--   Big container   -->
+		<!-- /Navbar -->
+
+		<!-- Reservation card -->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<!--      Wizard container        -->
 					<div class="wizard-container">
+						<!-- You can switch "data-color" with one of the next bright colors: "green", "orange", "red", "purple" -->
 						<div class="card wizard-card" data-color="green" id="wizard">
 							<form id="newReservationForm" action="" method="">
-								<!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
-
 								<div class="wizard-header">
 									<h3 class="wizard-title">
 										Foglalás
@@ -127,7 +112,6 @@
 										</li>
 									</ul>
 								</div>
-
 								<div class="tab-content">
 									<div class="tab-pane" id="details">
 										<div class="row">
@@ -262,7 +246,8 @@
 								<div class="wizard-footer">
 									<div class="pull-right">
 										<input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Következő' />
-										<input onclick="controlResertvationModal()" type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='ELKÜLDÉS' />
+										<input onclick="controlResertvationModal()" type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish'
+										 value='ELKÜLDÉS' />
 									</div>
 
 									<div class="pull-left">
@@ -271,63 +256,53 @@
 									<div class="clearfix"></div>
 								</div>
 							</form>
-							<!-- Próba kiiratás -->
 						</div>
 					</div>
-					<!-- wizard container -->
 				</div>
 			</div>
-			<!-- row -->
 		</div>
-		<!--  big container -->
-		<!--<div id="reservation-list">
-			<pre></pre>
-		</div>-->
+		<!-- /Reservation card -->
+
 	</div>
+	<!-- Background image -->
+
+	<!-- Control modal -->
 	<div class="modal fade" id="controlResertvationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Az Ön foglalásának adatai</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Az Ön foglalásának adatai</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p id="modal-body1"></p>
+					<p id="modal-body2"></p>
+					<p id="modal-body3"></p>
+					<p id="modal-body4"></p>
+					<p id="modal-body5"></p>
+					<p id="modal-body6"></p>
+					<p id="modal-body7"></p>
+					<p id="modal-body8"></p>
+					<p id="modal-body9"></p>
+				</div>
+				<div id="modal-footer" class="modal-footer">
+					<button type="button" class="btn btn-previous btn-fill btn-default btn-wd" data-dismiss="modal">Mégsem</button>
+					<button id="modalsubmit" type="submit" class="btn btn-finish btn-fill btn-success btn-wd" form="newReservationForm">Mentés</button>
+				</div>
 			</div>
-			<div class="modal-body">
-			<p id="modal-body1"></p>
-			<p id="modal-body2"></p>
-			<p id="modal-body3"></p>
-			<p id="modal-body4"></p>
-			<p id="modal-body5"></p>
-			<p id="modal-body6"></p>
-			<p id="modal-body7"></p>
-			<p id="modal-body8"></p>
-			<p id="modal-body9"></p>
-			</div>
-			<div id="modal-footer" class="modal-footer">
-			  <button type="button" class="btn btn-secondary" 
-				data-dismiss="modal">Mégsem</button>
-			  <button id="modalsubmit" type="submit" class="btn btn-primary" form="newReservationForm">Mentés</button>
-			</div>
-		  </div>
 		</div>
-	  </div>
-
+	</div>
+	<!-- /Control modal -->
 </body>
-<!--   Core JS Files   -->
+
 <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
-
-
-<!--  Plugin for the Wizard -->
 <script src="assets/js/material-bootstrap-wizard.js"></script>
-
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="assets/js/jquery.validate.min.js"></script>
-
-<!-- Foglalás ajax -->
-
 <script src="assets/js/reservation.js" type="text/javascript"></script>
 
 </html>

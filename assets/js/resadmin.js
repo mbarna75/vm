@@ -35,7 +35,7 @@ $(document).ready(function () {
         var urlParams = [];
         var url = RESTURL + "/reservations";
         var reg = /\?.*event\=([0-9]*)/;
-        
+
         // lapozo adatok kezelese
         urlParams.push('_limit=' + pageLimit);
         urlParams.push('_page=' + currentPage);
@@ -169,7 +169,7 @@ $(document).ready(function () {
     }
 
     // keres box lekezelese
-    $(".tickets-search-row input").on("keyup",
+    $(".reservations-search-row input").on("keyup",
         function () {
             // feltoltjuk a "globalis" kereses szoveget tarolo valtozot
             searchString = $(this).val();
@@ -203,7 +203,7 @@ $(document).ready(function () {
     // Innen indul az alkalmazas
     refreshReservationList();
 
-    reservationListTable.on("reservationDataChanged", function() {
+    reservationListTable.on("reservationDataChanged", function () {
         refreshReservationList();
     });
 });
@@ -226,3 +226,16 @@ function setEventDetails(event) {
     $("#event").val(event.title);
     $("#time").val(event.time);
 }
+function adminReservationModal() {
+    $("#adminReservationModal").modal("show");
+
+    $("#modal-body1").text("Név: " + $('tr.reservation-row').val());
+    $("#modal-body2").text("Mobilszám: " + $('#phnum').val());
+    $("#modal-body3").text("E-mail: " + $('#em').val());
+    $("#modal-body4").text("Érkezés: " + $('#arrival').val());
+    $("#modal-body5").text("Elutazás: " + $('#departure').val());
+    $("#modal-body6").text("Felnőttek: " + $('#adult').val());
+    $("#modal-body7").text("Gyerekek: " + $('#child').val());
+    $("#modal-body8").text("Szobák: " + $('#room').val());
+    $("#modal-body9").text("Megjegyzés: " + $('#txarea').val());
+};

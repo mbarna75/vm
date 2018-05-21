@@ -28,7 +28,7 @@
 }
 
 /*! CSS Used from: file:///C:/Web/vm/assets/css/gsdk.css */
-h1, h5, p, .navbar, a {
+h1, p, .navbar, a {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-family: "Helvetica Neue", "Open Sans", Arial, sans-serif;
@@ -41,11 +41,6 @@ h1 {
 
 h1 {
     font-size: 52px;
-}
-
-h5 {
-    font-size: 18px;
-    margin-bottom: 15px;
 }
 
 p {
@@ -179,8 +174,8 @@ a:focus, a:active, button::-moz-focus-inner {
     background-color: transparent;
 }
 
-.navbar-ct-red {
-    background-color: rgba(255, 76, 64, 0.98);
+.navbar-ct-green {
+    background-color: rgba(76, 217, 100, 0.98);
 }
 
 .navbar-transparent {
@@ -425,7 +420,7 @@ a:focus, a:active, button::-moz-focus-inner {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    src: url(https://fonts.gstatic.com/s/materialicons/v37/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
 @font-face {
