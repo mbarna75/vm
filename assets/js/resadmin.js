@@ -69,25 +69,39 @@ $(document).ready(function () {
         tbody.html('');
 
         $.each(currentReservations, function (index, reservation) {
-            var row = $(".templates .reservation-row").clone().attr('onclick', 'adminReservationModal('+(index+1)+');');
-            row.find("td").eq(0).html(reservation.name);
-            row.find("td").eq(1).html(reservation.phnum);
-            row.find("td").eq(2).html(reservation.em);
-            row.find("td").eq(3).html(reservation.arrival);
-            row.find("td").eq(4).html(reservation.departure);
-            row.find("td").eq(5).html(reservation.adult);
-            row.find("td").eq(6).html(reservation.child);
-            row.find("td").eq(7).html(reservation.room);
-            row.find("td").eq(8).html(reservation.textarea);
-            // row.find("td").eq(9).html("<button id='" + index + "' type='button'>Részletek</button>");
-            tbody.append(row);
+            if (reservation.new) {
+                var row = $(".templates .reservation-row").clone().attr('onclick', 'adminReservationModal('+(index+1)+');').attr('style', 'font-weight: bold');
+                row.find("td").eq(0).html(reservation.name);
+                row.find("td").eq(1).html(reservation.phnum);
+                row.find("td").eq(2).html(reservation.em);
+                row.find("td").eq(3).html(reservation.arrival);
+                row.find("td").eq(4).html(reservation.departure);
+                row.find("td").eq(5).html(reservation.adult);
+                row.find("td").eq(6).html(reservation.child);
+                row.find("td").eq(7).html(reservation.room);
+                row.find("td").eq(8).html(reservation.textarea);
+                row.find("td").eq(9).html(reservation.new);
+                row.find("td").eq(10).html(reservation.id);
+                // .attr('style', 'display: none;');
+
+            } else {
+
+                var row = $(".templates .reservation-row").clone().attr('onclick', 'adminReservationModal('+(index+1)+');');
+                row.find("td").eq(0).html(reservation.name);
+                row.find("td").eq(1).html(reservation.phnum);
+                row.find("td").eq(2).html(reservation.em);
+                row.find("td").eq(3).html(reservation.arrival);
+                row.find("td").eq(4).html(reservation.departure);
+                row.find("td").eq(5).html(reservation.adult);
+                row.find("td").eq(6).html(reservation.child);
+                row.find("td").eq(7).html(reservation.room);
+                row.find("td").eq(8).html(reservation.textarea);
+            }
+                // row.find("td").eq(9).html("<button id='" + index + "' type='button'>Részletek</button>");
+                tbody.append(row);
         });
     }
-    $("#1 .reservation-row").click(function () {
-        console.log(this);
-
-        $(this).css("background-color", "red");
-    });
+    
 
     // lista ujratoltese ajax-val (meghivja a fillReservationsTable-t is!)
     function refreshReservationList() {
@@ -292,6 +306,7 @@ function adminReservationModal(sorszam) {
     $("#adminReservationModal").modal("show");
 
     var sor = $("tr:nth-child("+sorszam+")");
+    sor.attr('style','');
     $("#modal-body1").text("Név: " + sor.find("td").eq(0).text());
     $("#modal-body2").text("Mobilszám: " + sor.find("td").eq(1).text());
     $("#modal-body3").text("E-mail: " + sor.find("td").eq(2).text());

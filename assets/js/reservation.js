@@ -46,10 +46,11 @@ $("#modalsubmit").on("click", function newReservationTag(event) {
     // if (newReservationFormNativeElem.checkValidity() == true) {
         // Itt valid az urlapom
         var serializedFormArray = newReservationFormElem.serializeArray();
-        var data = {};
+        var data = {new: "true"};
         $(serializedFormArray).each(
             function (index, elem) {
                 data[elem['name']] = elem['value'];
+                
             }
         );
 
@@ -90,7 +91,6 @@ $("#modalsubmit").on("click", function newReservationTag(event) {
 //});
 function controlResertvationModal() {
     $("#controlResertvationModal").modal("show");
-    console.log("itten vagyok");
     $("#modal-body1").text("Név: "+$('#name').val());
     $("#modal-body2").text("Mobilszám: "+$('#phnum').val());
     $("#modal-body3").text("E-mail: "+$('#em').val());

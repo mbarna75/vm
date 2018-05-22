@@ -1,6 +1,7 @@
 {
   "reservations": [
     {
+      "new": "true",
       "name": "Próba Gizi",
       "phnum": "+36-30-999-8877",
       "em": "pgizi@gmail.com",
@@ -13,6 +14,7 @@
       "id": 1
     },
     {
+      "new": "true",
       "name": "Barnuska",
       "phnum": "3547345734",
       "em": "dfghsdh@shrth.hu",
@@ -25,6 +27,7 @@
       "id": 2
     },
     {
+      "new": "true",
       "name": "Barnuska",
       "phnum": "3456",
       "em": "barnuska@gmail.com",
@@ -37,6 +40,7 @@
       "id": 3
     },
     {
+      "new": "true",
       "name": "Béla",
       "phnum": "06-30-999-5555",
       "em": "hghgh@hghgh.hu",
@@ -49,6 +53,7 @@
       "id": 4
     },
     {
+      "new": "true",
       "name": "Jóska Pista",
       "phnum": "06-20-222-4444",
       "em": "joskapista@gmail.com",
@@ -61,6 +66,7 @@
       "id": 5
     },
     {
+      "new": "true",
       "name": "Nikike",
       "phnum": "06-20-444-6666",
       "em": "niki@freemail.com",
@@ -73,6 +79,7 @@
       "id": 6
     },
     {
+      "new": "true",
       "name": "Pistám",
       "phnum": "06-20-1111-1111",
       "em": "pista@gmail.com",
@@ -83,6 +90,45 @@
       "room": "1 szoba",
       "textarea": "etztrzeufmbm",
       "id": 7
+    },
+    {
+      "new": "true",
+      "name": "Karesz",
+      "phnum": "06-30-9334-556",
+      "em": "karesz@gmail.com",
+      "arrival": "2018-06-01",
+      "departure": "2018-06-08",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "Istria",
+      "id": 8
+    },
+    {
+      "new": "true",
+      "name": "Mezei Ferenc",
+      "phnum": "06-30-359-8802",
+      "em": "",
+      "arrival": "2018-05-30",
+      "departure": "2018-06-06",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "",
+      "id": 9
+    },
+    {
+      "new": "true",
+      "name": "fjfghjfghj",
+      "phnum": "54634653463",
+      "em": "",
+      "arrival": "2018-05-23",
+      "departure": "2018-05-29",
+      "adult": "2 felnőtt",
+      "child": "0 gyerek",
+      "room": "1 szoba",
+      "textarea": "rrrrrrrrrrrrrrr",
+      "id": 10
     }
   ]
 }
