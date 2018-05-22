@@ -46,7 +46,7 @@
       "child": "0 gyerek",
       "room": "5 szoba",
       "textarea": "dfgdfgjdfgj",
-      "id": 5
+      "id": 4
     },
     {
       "name": "Jóska Pista",
@@ -58,10 +58,7 @@
       "child": "0 gyerek",
       "room": "1 szoba",
       "textarea": "Megyünk hát",
-      "id": 15
-    },
-    {
-      "id": 16
+      "id": 5
     },
     {
       "name": "Nikike",
@@ -73,7 +70,7 @@
       "child": "0 gyerek",
       "room": "1 szoba",
       "textarea": "skjfslkfdjbsdfkljbsn",
-      "id": 17
+      "id": 6
     },
     {
       "name": "Pistám",
@@ -84,8 +81,8 @@
       "adult": "2 felnőtt",
       "child": "0 gyerek",
       "room": "1 szoba",
-      "textarea": "",
-      "id": 18
+      "textarea": "etztrzeufmbm",
+      "id": 7
     }
   ]
 }

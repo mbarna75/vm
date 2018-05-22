@@ -1,4 +1,55 @@
+var pickedup;
+
+$.fn.sendForm = function () {
+    var form = $(this);
+    var action = form.attr("action");
+    var method = form.attr("method") || "post";
+    var callBack = form.attr("callBack");
+
+    function checkFormItem(input) {
+        input = $(input);
+        if (input.attr("required") && input.val() == "") {
+            input.parents(".form-group").addClass("invalid");
+            return false;
+        } else {
+            input.parents(".form-group").removeClass("invalid");
+        }
+
+        return true;
+    }
+
+    form.on("submit", function (ev) {
+        ev.preventDefault();
+        var formData = {};
+        var formIsValid = [];
+        $(this).find("input, select, textarea").each(function (index, input) {
+            formData[input.name] = input.value;
+            formIsValid.push(checkFormItem(input));
+        });
+
+        if (formIsValid.indexOf(false) > -1) {
+            return;
+        }
+
+        $.ajax({
+            type: method.toUpperCase(),
+            url: action,
+            data: formData,
+            dataType: 'json'
+        }).done(function (resp) {
+            console.log(resp);
+            if (window[callBack]) {
+                window[callBack]();
+            }
+        });
+    });
+
+    return this;
+};
+
+
 $(document).ready(function () {
+
     var RESTURL = "http://localhost:3000";
     var searchString = '';
     var sortKey = '';
@@ -10,13 +61,15 @@ $(document).ready(function () {
     var maxPage = 0; // hany oldalt tudunk megjeleniteni
     var totalCount = 0; // osszes egyed szam amit a server tud szolgaltatni
 
+
+
     // tabla kitoltese javascript object-bol
     function fillReservationsTable(currentReservations) {
         var tbody = $("#reservation-list tbody");
         tbody.html('');
 
         $.each(currentReservations, function (index, reservation) {
-            var row = $(".templates .reservation-row").clone();
+            var row = $(".templates .reservation-row").clone().attr('onclick', 'adminReservationModal('+(index+1)+');');
             row.find("td").eq(0).html(reservation.name);
             row.find("td").eq(1).html(reservation.phnum);
             row.find("td").eq(2).html(reservation.em);
@@ -26,9 +79,15 @@ $(document).ready(function () {
             row.find("td").eq(6).html(reservation.child);
             row.find("td").eq(7).html(reservation.room);
             row.find("td").eq(8).html(reservation.textarea);
+            // row.find("td").eq(9).html("<button id='" + index + "' type='button'>Részletek</button>");
             tbody.append(row);
         });
     }
+    $("#1 .reservation-row").click(function () {
+        console.log(this);
+
+        $(this).css("background-color", "red");
+    });
 
     // lista ujratoltese ajax-val (meghivja a fillReservationsTable-t is!)
     function refreshReservationList() {
@@ -211,31 +270,39 @@ $(document).ready(function () {
 // Kiválasztott esemény.
 window.currentEvent = null;
 
-$("#newReservationForm").sendForm();
+// $("#newReservationForm").sendForm();
 // Jegylista frissítése.
 function refreshReservationList() {
     $("#newReservationModal").modal("hide");
     $("#reservation-list").trigger("ReservationDataChanged");
 }
 
-function openNewReservationModal() {
-    $("#newReservationModal").modal("show");
-}
+// function openNewReservationModal() {
+//     $("#newReservationModal").modal("show");
+// }
 
-function setEventDetails(event) {
-    $("#event").val(event.title);
-    $("#time").val(event.time);
-}
-function adminReservationModal() {
+// function setEventDetails(event) {
+//     $("#event").val(event.title);
+//     $("#time").val(event.time);
+// }
+function adminReservationModal(sorszam) {
+
+    
+
     $("#adminReservationModal").modal("show");
 
-    $("#modal-body1").text("Név: " + $('tr.reservation-row').val());
-    $("#modal-body2").text("Mobilszám: " + $('#phnum').val());
-    $("#modal-body3").text("E-mail: " + $('#em').val());
-    $("#modal-body4").text("Érkezés: " + $('#arrival').val());
-    $("#modal-body5").text("Elutazás: " + $('#departure').val());
-    $("#modal-body6").text("Felnőttek: " + $('#adult').val());
-    $("#modal-body7").text("Gyerekek: " + $('#child').val());
-    $("#modal-body8").text("Szobák: " + $('#room').val());
-    $("#modal-body9").text("Megjegyzés: " + $('#txarea').val());
+    var sor = $("tr:nth-child("+sorszam+")");
+    $("#modal-body1").text("Név: " + sor.find("td").eq(0).text());
+    $("#modal-body2").text("Mobilszám: " + sor.find("td").eq(1).text());
+    $("#modal-body3").text("E-mail: " + sor.find("td").eq(2).text());
+    $("#modal-body4").text("Érkezés: " + sor.find("td").eq(3).text());
+    $("#modal-body5").text("Elutazás: " + sor.find("td").eq(4).text());
+    $("#modal-body6").text("Felnőttek: " + sor.find("td").eq(5).text());
+    $("#modal-body7").text("Gyerekek: " + sor.find("td").eq(6).text());
+    $("#modal-body8").text("Szobák: " + sor.find("td").eq(7).text());
+    $("#modal-body9").text("Megjegyzés: " + sor.find("td").eq(8).text());
+
 };
+
+
+
